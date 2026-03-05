@@ -270,7 +270,7 @@ show_menu() {
     echo -e "  ${CYAN}9${NC}) 📦 ${BOLD}Install ALL platforms${NC}"
     echo -e "  0) ❌ Exit"
     echo ""
-    read -p "Choose platform (0-9): " choice
+    read -p "Choose platform (0-9): " choice < /dev/tty
 }
 
 # Main
