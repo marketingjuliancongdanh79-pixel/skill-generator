@@ -273,14 +273,19 @@ show_menu() {
 
     if [ -t 0 ]; then
         read -r -p "Choose platform (0-9): " choice
-    elif [ -r /dev/tty ]; then
-        read -r -p "Choose platform (0-9): " choice < /dev/tty
+    elif exec 3</dev/tty 2>/dev/null; then
+        printf "Choose platform (0-9): " > /dev/tty
+        IFS= read -r choice <&3
+        exec 3<&-
     else
         print_error "No interactive terminal detected."
         echo ""
-        echo "Run with an option number, for example:"
+        echo "Run interactively from a terminal, for example:"
+        echo "  curl -sL <url>/install.sh | bash"
+        echo ""
+        echo "Or pass an option number directly:"
         echo "  bash install.sh 7"
-        echo "  curl -sL <url> | bash -s -- 7"
+        echo "  curl -sL <url>/install.sh | bash -s -- 7"
         exit 1
     fi
 }
