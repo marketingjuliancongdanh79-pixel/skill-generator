@@ -133,7 +133,27 @@ Phase 6-8: REFINE (optional, for production skills)
 
 ## 🔧 Installation
 
-### Prerequisites
+### ⚡ One-Click Install (Recommended)
+
+Install with a single command — the script auto-detects your OS, lets you choose a platform, clones the repo, and creates all bridge/rule files:
+
+**macOS / Linux:**
+
+```bash
+curl -sL https://raw.githubusercontent.com/marketingjuliancongdanh79-pixel/skill-generator/main/install.sh | bash
+```
+
+**Windows (PowerShell):**
+
+```powershell
+irm https://raw.githubusercontent.com/marketingjuliancongdanh79-pixel/skill-generator/main/install.ps1 | iex
+```
+
+> 💡 The installer shows an interactive menu to choose your platform (Antigravity, Claude Code, Cursor, Windsurf, Cline, Copilot, OpenClaw) or install ALL at once.
+
+---
+
+### Prerequisites (Manual Install)
 
 - A supported AI Agent platform (see compatibility table below)
 - Python 3.8+ (optional, for scripts)
@@ -788,7 +808,27 @@ Nó giúp bạn **tạo AI Skill chất lượng production** qua **pipeline 8 g
 
 ## 🔧 Cài đặt
 
-### Yêu cầu
+### ⚡ Cài bằng 1 lệnh (Khuyến khích)
+
+Cài đặt bằng 1 lệnh duy nhất — script tự clone repo, cho bạn chọn nền tảng, và tạo tất cả bridge/rule files:
+
+**macOS / Linux:**
+
+```bash
+curl -sL https://raw.githubusercontent.com/marketingjuliancongdanh79-pixel/skill-generator/main/install.sh | bash
+```
+
+**Windows (PowerShell):**
+
+```powershell
+irm https://raw.githubusercontent.com/marketingjuliancongdanh79-pixel/skill-generator/main/install.ps1 | iex
+```
+
+> 💡 Installer hiện menu tương tác để chọn nền tảng (Antigravity, Claude Code, Cursor, Windsurf, Cline, Copilot, OpenClaw) hoặc cài TẤT CẢ cùng lúc.
+
+---
+
+### Yêu cầu (Cài thủ công)
 
 - Nền tảng AI Agent (xem bảng tương thích)
 - Python 3.8+ (cho scripts — tùy chọn)
