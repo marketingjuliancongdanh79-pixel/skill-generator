@@ -270,7 +270,24 @@ show_menu() {
     echo -e "  ${CYAN}9${NC}) 📦 ${BOLD}Install ALL platforms${NC}"
     echo -e "  0) ❌ Exit"
     echo ""
-    read -p "Choose platform (0-9): " choice
+
+    if [ -t 0 ]; then
+        read -r -p "Choose platform (0-9): " choice
+    elif exec 3</dev/tty 2>/dev/null; then
+        printf "Choose platform (0-9): " > /dev/tty
+        IFS= read -r choice <&3
+        exec 3<&-
+    else
+        print_error "No interactive terminal detected."
+        echo ""
+        echo "Run interactively from a terminal, for example:"
+        echo "  curl -sL <url>/install.sh | bash"
+        echo ""
+        echo "Or pass an option number directly:"
+        echo "  bash install.sh 7"
+        echo "  curl -sL <url>/install.sh | bash -s -- 7"
+        exit 1
+    fi
 }
 
 # Main
